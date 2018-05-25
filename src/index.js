@@ -1,8 +1,4 @@
 // @flow
-import * as React from 'react'
+import Wrapper from './component'
 
-export default class HelloWorld extends React.Component{
-   render(){
-     return <span>Hello World</span>
-   }
-}
+export default Wrapper
