@@ -1,25 +1,21 @@
-import test from "ava";
-import React from "react";
-import Enzyme, { shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-
+import test from 'ava'
+import React from 'react'
+import Enzyme, { shallow } from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
+import CssFilterWrapper from '../build/main'
 //
-Enzyme.configure({ adapter: new Adapter() });
+Enzyme.configure({ adapter: new Adapter() })
 
 // example
 
-test("1 + 2 = 3 should ok", t => {
-  t.is(1 + 2, 3);
-});
-
-test("React simple test", t => {
-  const App = ({ children }) => {
-    return <div className="container">{children}</div>;
-  };
-  const wrapper = shallow(
-    <App>
-      <span>test</span>
-    </App>
-  );
-  t.is(wrapper.find("span").length, 1);
-});
+test('basic test', (t) => {
+  const wrapper = shallow(<CssFilterWrapper>
+    <img
+      src='http://orscxqn8h.bkt.clouddn.com/18-3-3/943334.jpg'
+      alt='test'
+      width={500}
+      height={500}
+    />
+   </CssFilterWrapper>)
+  t.is(wrapper.find('img').length, 1)
+})

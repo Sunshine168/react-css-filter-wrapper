@@ -5,7 +5,7 @@
   "main": "build/main.js",
   "scripts": {
     "ava": "ava",
-    "test": "build && ava",
+    "test": "npm run build && ava",
     "dev": "node server",
     "prebuild": "rm -rf ./build",
     "build": "webpack --config ./webpack/webpack.prod.js --progress"
